@@ -40,15 +40,9 @@ export const efficiencyCards = [
   },
 ];
 
-
-
 export const audienceTabs = ["Personal", "Business"];
 
-export const supportPills = [
-  "Debit card",
-  "FX exchange",
-  "Virtual cards",
-];
+export const supportPills = ["Debit card", "FX exchange", "Virtual cards"];
 
 export const featureCard = [
   {
@@ -74,5 +68,13 @@ export const featureCard = [
     content:
       "You are the boss.Set limits, track, freeze/unfreeze and decide where cards can be used.",
     button: "Discover Expenses",
-  }
+  },
+];
+
+export const hover = [
+  { title: "cosmetics", amount: "$100" },
+  { title: "Food", amount: "$45" },
+  { title: "Shopping", amount: "$241" },
+  { title: "Others", amount: "$100" },
+  { title: "tech", amount: "$45" },
 ];

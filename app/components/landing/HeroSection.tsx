@@ -107,8 +107,8 @@ export function HeroSection() {
             <button
               type="button"
               aria-label="Play introduction video"
-              className="play-btn flex h-9 w-9 items-center justify-center rounded-full bg-(--color-secondary)/12 text-(--text-secondary) will-change-transform"
-              style={{ opacity: 0 }}
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-(--color-secondary)/12 text-(--text-secondary) will-change-transform"
+              style={{ opacity: 8 }}
             >
               <PlayIcon className="w-4 h-4" />
             </button>
@@ -135,7 +135,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative mx-auto mt-4 flex h-48 w-full items-end justify-center sm:h-56">
+      <div className="relative mx-auto my-8 flex h-48 w-full items-end justify-center sm:h-56">
         <div className="card absolute left-[12%] top-[4%] w-[37%] rotate-50">
           <div className="rounded-[1.35rem]">
             <Image
@@ -175,7 +175,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="card absolute -bottom-6 left-1/2 z-30 flex h-20 w-20 -translate-x-1/2 items-center justify-center rounded-full border-[6px] border-[#050505] bg-(--color-background) shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
+        <div className="card absolute -bottom-10 left-1/2 z-30 flex h-20 w-20 -translate-x-1/2 items-center justify-center rounded-full border-[6px] border-[#050505] bg-(--color-background) shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
           <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-(--bg-primary) text-sm text-(--text-primary)">
             <Image
               src="/landing-assets/explore-more.png"

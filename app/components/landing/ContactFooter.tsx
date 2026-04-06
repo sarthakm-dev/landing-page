@@ -46,7 +46,7 @@ export function ContactFooter() {
     <section
       ref={footerRef}
       id="transfers"
-      className="flex justify-center items-center rounded-[1.9rem] bg-(--text-primary) px-6 py-12 sm:px-8"
+      className="flex justify-center mx-18 items-center rounded-[1.9rem] bg-(--text-primary) px-6 py-12 sm:px-8"
     >
       <div className="flex px-10 gap-10 justify-center items-center flex-col text-center">
         <h1 className="left-content max-w-[20ch] text-3xl font-bold text-(--text-secondary) leading-snug">
