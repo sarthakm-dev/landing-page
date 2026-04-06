@@ -62,7 +62,7 @@ export function ImpressionSection() {
         alt="Explore More"
         width={1500}
         height={1500}
-        className="impression-img h-auto w-full rounded-[1.15rem]"
+        className="impression-img md:block hidden h-auto w-full rounded-[1.15rem]"
         priority
       />
     </section>

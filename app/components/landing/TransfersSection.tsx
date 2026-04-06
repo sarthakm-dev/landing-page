@@ -61,7 +61,7 @@ export function TransfersSection() {
           alt="Explore More"
           width={829}
           height={800}
-          className="transfer w-full h-auto rounded-[1.15rem]"
+          className="transfer md:block hidden w-full h-auto rounded-[1.15rem]"
           priority
         />
       </div>

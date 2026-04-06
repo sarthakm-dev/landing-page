@@ -43,8 +43,7 @@ export function HeroSection() {
       className="relative overflow-hidden rounded-[1.9rem] border border-white/8 bg-(--color-background) px-4 pb-5 pt-4 shadow-[0_24px_90px_rgba(0,0,0,0.4)] sm:px-5"
     >
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(72,255,224,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(72,255,224,0.12)_1px,transparent_1px)] bg-size-[56px_56px] opacity-30" />
-      <div className="pointer-events-none absolute left-[72%] top-0 h-full w-px bg-(--color-neutral)/25" />
-      <div className="pointer-events-none absolute left-0 top-[55%] h-px w-full bg-(--color-neutral)/20" />
+    
 
       <header className="relative z-10 mb-6 flex items-center justify-between gap-3">
         <div className="flex items-center gap-4">
@@ -84,7 +83,7 @@ export function HeroSection() {
         </div>
       </header>
 
-      <div className="relative z-10 flex justify-evenly px-4 pt-14">
+      <div className="relative z-10 flex md:flex-row flex-col md:mt-0 mt-10 justify-evenly px-6 pt-14">
         <div className="max-w-56 pt-1">
           <h1 className="text-[8rem] font-black leading-[0.8] tracking-[-0.08em] sm:text-[2.35rem]">
             Digitize your univers bank
@@ -150,7 +149,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="card absolute left-1/2 top-[5%] z-20 w-[44%] -rotate-50 -translate-x-1/2">
+        <div className="card absolute left-1/2 top-[5%] z-20 w-[44%] md:-rotate-50 -translate-x-1/2">
           <div className="rounded-[1.45rem] ">
             <Image
               src="/landing-assets/card-orange.png"

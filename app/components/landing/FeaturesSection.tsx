@@ -8,7 +8,7 @@ export function FeaturesSection() {
       id="features"
       className="bg-(--color-secondary) px-4 py-12 text-(--text-primary) shadow-[0_22px_70px_rgba(0,0,0,0.08)] sm:px-5"
     >
-      <div className="flex gap-4 sm:grid-cols-[0.92fr_1.08fr] sm:items-start px-10">
+      <div className="flex md:flex-row flex-col gap-4 sm:grid-cols-[0.92fr_1.08fr] sm:items-start px-10">
         <div className="w-[50%]">
           <h2 className="max-w-[10ch] text-[2.8rem] font-black leading-[0.94] tracking-[0.1rem]">
             We keep your money safe
@@ -36,7 +36,7 @@ export function FeaturesSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid md:grid-cols-2 gap-3">
           {featureCard.map((card, index) => (
             <article
               key={index}
@@ -78,10 +78,10 @@ export function FeaturesSection() {
                shadow-[inset_0_1px_0_rgba(255,255,255,0.55)] overflow-hidden"
           >
             <div className="z-10 flex flex-col items-center transition-opacity duration-300 group-hover:opacity-0">
-              <div className="text-[3rem] font-black tracking-[-0.08em] text-(--text-primary)/80 sm:text-[1.9rem]">
+              <div className="md:text-[3rem] text-xl font-black tracking-[-0.08em] text-(--text-primary)/80 sm:text-[1.9rem]">
                 {stat.value}
               </div>
-              <p className="mt-1 text-[1rem] leading-4 text-(--text-primary)">
+              <p className="mt-1 md:text-[1rem] text-md leading-4 text-(--text-primary)">
                 {stat.label}
               </p>
             </div>
