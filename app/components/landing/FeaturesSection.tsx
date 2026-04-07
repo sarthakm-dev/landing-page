@@ -64,9 +64,10 @@ export function FeaturesSection() {
           <h2 className="max-w-[10ch] text-[2.8rem] font-black leading-[0.94] tracking-[0.1rem]">
             We keep your money safe
           </h2>
-          <p className="mt-3 max-w-[28ch] text-[0.9rem] leading-5 text-(--text-primary)/55">
+          <p className="mt-3 max-w-[28ch] text-1 font-medium leading-5 text-(--text-primary)/55">
             Keep your money safe with our anti-fraud system. All our cards
-            support 3D Secure.
+            support 3D Secure and our contactless card limits help fight
+            contactless fraud
           </p>
 
           <div
