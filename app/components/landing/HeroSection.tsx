@@ -45,7 +45,7 @@ export function HeroSection() {
       id="hero-section"
       className="relative bg-(--color-background) px-4 pb-20 pt-4 shadow-[0_24px_90px_rgba(0,0,0,0.4)] sm:px-5  border-x-12 border-white"
     >
-      <svg className="w-0 h-0 absolute">
+      <svg className="w-0 h-0 absolute md:block hidden">
         <defs>
           <clipPath id="heroClip" clipPathUnits="objectBoundingBox">
             <path d="M 0,0 L 1,0 L 1,1 L 0.56,1 Q 0.5,1.10 0.44,1 L 0,1 Z" />
