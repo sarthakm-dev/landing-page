@@ -76,5 +76,5 @@ export const hover = [
   { title: "Food", amount: "$45" },
   { title: "Shopping", amount: "$241" },
   { title: "Others", amount: "$100" },
-  { title: "tech", amount: "$45" },
+  { title: "Tech", amount: "$45" },
 ];
