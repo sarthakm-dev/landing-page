@@ -58,7 +58,7 @@ export function FeaturesSection() {
   }, []);
 
   return (
-    <section className="bg-(--color-secondary) px-4 py-12 text-(--text-primary) shadow-[0_22px_70px_rgba(0,0,0,0.08)] sm:px-5">
+    <section className="bg-(--color-secondary) md:px-4 px-10 py-12 text-(--text-primary) shadow-[0_22px_70px_rgba(0,0,0,0.08)] sm:px-5">
       <div className="flex md:flex-row flex-col gap-4 sm:grid-cols-[0.92fr_1.08fr] sm:items-start px-10">
         <div className="w-[50%]">
           <h2 className="max-w-[10ch] text-[2.8rem] font-black leading-[0.94] tracking-[0.1rem]">
@@ -120,7 +120,7 @@ export function FeaturesSection() {
       </div>
 
       <div className="mt-16 px-10">
-        <div className="flex justify-around">
+        <div className="flex md:flex-row flex-col justify-around">
           <h2 className="text-[2.5rem] max-w-[15ch] font-black leading-tight">
             Get to know more about Univers
           </h2>
@@ -130,7 +130,7 @@ export function FeaturesSection() {
           </p>
         </div>
 
-        <div className="mt-8 flex justify-evenly gap-6">
+        <div className="mt-8 flex md:flex-row flex-col justify-evenly gap-6">
           {stats.map((stat, idx) => (
             <div
               key={idx}
@@ -155,10 +155,10 @@ export function FeaturesSection() {
         </div>
       </div>
 
-      <div className="mt-10 px-18">
+      <div className="mt-10 md:px-18">
         <ImpressionSection />
       </div>
-      <div className="mt-10 px-18">
+      <div className="mt-10 md:px-18">
         <TransfersSection />
       </div>
     </section>

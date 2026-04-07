@@ -39,7 +39,7 @@ export function TransfersSection() {
     <section
       ref={sectionRef}
       id="transfers"
-      className="flex justify-around items-center rounded-[1.9rem] bg-(--color-background) px-6 py-12 sm:px-8"
+      className="flex md:justify-around justify-center items-center rounded-[1.9rem] bg-(--color-background) px-6 py-12 sm:px-8"
     >
       <div className="flex px-10 justify-center items-center flex-col text-center">
         <h2 className="max-w-[20ch] text-3xl font-bold text-(--text-secondary) leading-snug">

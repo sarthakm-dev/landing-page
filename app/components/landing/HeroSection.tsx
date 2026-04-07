@@ -148,7 +148,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative mx-auto my-8 flex h-48 w-full items-end justify-center sm:h-56">
+      <div className="relative mx-auto my-8 flex md:h-48 h-10 w-full items-end justify-center sm:h-56">
         <div className="card absolute left-[12%] top-[4%] w-[37%] rotate-50 ">
           <Image
             src="/landing-assets/card-blue.png"
