@@ -24,7 +24,7 @@ export default function RootLayout({
       lang="en"
       className={`${sora.variable} ${plexMono.variable} h-full antialiased`}
     >
-      <body suppressHydrationWarning className="min-h-full flex flex-col">{children}</body>
+      <body suppressHydrationWarning className="min-h-full min-w-full flex flex-col">{children}</body>
     </html>
   );
 }
