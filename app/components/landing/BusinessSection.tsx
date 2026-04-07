@@ -1,49 +1,49 @@
-"use client";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { hover } from "@/app/data/landing-content";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import { useEffect, useRef } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+'use client';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { hover } from '@/app/data/landing-content';
+import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { useEffect, useRef } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 gsap.registerPlugin(ScrollTrigger);
 export default function BusinessSection() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".card-left", {
+      gsap.from('.card-left', {
         x: -300,
         opacity: 0,
         duration: 2,
         stagger: 0.2,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
         },
       });
 
-      gsap.from(".card-right", {
+      gsap.from('.card-right', {
         x: 300,
         opacity: 0,
         duration: 2,
         stagger: 0.2,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
         },
       });
 
-      gsap.from(".card-full", {
+      gsap.from('.card-full', {
         y: -300,
         opacity: 0,
         duration: 2,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
         },
       });
     }, sectionRef);
@@ -65,7 +65,6 @@ export default function BusinessSection() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        
         <Card className="card-left bg-(--bg-primary) text-(--text-primary) rounded-3xl p-6 flex flex-col justify-between min-h-80">
           <CardHeader className="p-0">
             <CardTitle className="text-xl font-bold">
@@ -84,7 +83,6 @@ export default function BusinessSection() {
           </CardContent>
         </Card>
 
-        
         <Card className="card-right bg-(--color-background) rounded-3xl p-6 flex flex-col justify-between min-h-80">
           <CardHeader className="p-0">
             <CardTitle className="text-xl font-semibold">
@@ -105,8 +103,7 @@ export default function BusinessSection() {
           </CardContent>
         </Card>
 
-
-        <Card className="card-left bg-(--color-background) rounded-3xl p-6 flex flex-col justify-between min-h-80">
+        <Card className="card-left bg-(--color-background) rounded-3xl p-6 flex flex-col justify-between min-h-80 group overflow-hidden">
           <CardHeader className="p-0">
             <CardTitle className="text-xl font-semibold">
               Smart company debit cards help you and your team go further
@@ -115,18 +112,26 @@ export default function BusinessSection() {
               Learn more about Cards
             </p>
           </CardHeader>
-          <CardContent className="p-0 flex justify-center mt-6">
+
+          <CardContent className="p-0 flex justify-center mt-6 relative">
             <Image
               src="/landing-assets/cards.png"
               alt="cards"
               width={260}
               height={200}
-              className="rounded-xl h-auto w-auto"
+              className="rounded-xl h-auto w-auto transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:opacity-0 "
+            />
+
+            <Image
+              src="/landing-assets/card-hover.png"
+              alt="cards hover"
+              width={260}
+              height={200}
+              className="absolute inset-0 m-auto rounded-xl h-auto w-auto opacity-0 transition-all duration-1000 group-hover:opacity-100 group-hover:translate-y-0"
             />
           </CardContent>
         </Card>
 
-        
         <Card className="card-right bg-(--color-background) rounded-3xl p-6 flex flex-col justify-between min-h-80">
           <CardHeader className="p-0">
             <CardTitle className="text-xl font-semibold">
@@ -140,8 +145,7 @@ export default function BusinessSection() {
           </CardContent>
         </Card>
 
-
-        <Card className="card-full md:col-span-2 bg-(--color-background) rounded-3xl p-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <Card className="card-full md:col-span-2 bg-(--color-background) rounded-3xl p-8 flex flex-col md:flex-row justify-between items-center gap-6 group overflow-hidden">
           <CardHeader className="p-0">
             <CardTitle className="text-2xl font-semibold">
               Set and change team permissions with a tap
@@ -155,13 +159,22 @@ export default function BusinessSection() {
               Discover Revolut Business <ArrowRight />
             </p>
           </CardHeader>
-          <CardContent className="p-0">
+
+          <CardContent className="p-0 relative">
             <Image
               src="/landing-assets/transfers.png"
               alt="permissions"
               width={260}
               height={220}
-              className="h-auto w-auto"
+              className="h-auto w-auto transition-all duration-1000 ease-in-out group-hover:opacity-0 group-hover:-translate-y-5"
+            />
+
+            <Image
+              src="/landing-assets/export-hover.png"
+              alt="permissions hover"
+              width={260}
+              height={220}
+              className="absolute inset-0 m-auto h-auto w-auto opacity-0 transition-all duration-1000 ease-linear group-hover:opacity-100 group-hover:translate-y-0"
             />
           </CardContent>
         </Card>

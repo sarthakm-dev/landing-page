@@ -1,13 +1,13 @@
-"use client";
-import Image from "next/image";
-import { audienceTabs, navLinks } from "@/app/data/landing-content";
-import { PlayIcon } from "lucide-react";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+'use client';
+import Image from 'next/image';
+import { audienceTabs, navLinks } from '@/app/data/landing-content';
+import { PlayIcon } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +19,7 @@ export function HeroSection() {
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        ".card",
+        '.card',
         { y: 100, opacity: 0, scale: 0.8 },
         {
           y: 0,
@@ -29,10 +29,10 @@ export function HeroSection() {
           stagger: 0.2,
           scrollTrigger: {
             trigger: heroRef.current,
-            start: "top 80%",
-            toggleActions: "play reverse play reverse",
+            start: 'top 80%',
+            toggleActions: 'play reverse play reverse',
           },
-        },
+        }
       );
     }, heroRef);
 
@@ -43,20 +43,15 @@ export function HeroSection() {
     <section
       ref={heroRef}
       id="hero-section"
-      className="relative bg-(--color-background) px-4 pb-20 pt-4 shadow-[0_24px_90px_rgba(0,0,0,0.4)] sm:px-5 border-t-8 border-x-8   border-white"
-      style={{
-        clipPath: `url(#heroClip)`,
-      }}
+      className="relative bg-(--color-background) px-4 pb-20 pt-4 shadow-[0_24px_90px_rgba(0,0,0,0.4)] sm:px-5  border-x-12 border-white"
     >
-      <svg width="0" height="0" style={{ position: "absolute" }}>
+      <svg className="w-0 h-0 absolute">
         <defs>
           <clipPath id="heroClip" clipPathUnits="objectBoundingBox">
             <path d="M 0,0 L 1,0 L 1,1 L 0.56,1 Q 0.5,1.10 0.44,1 L 0,1 Z" />
           </clipPath>
         </defs>
       </svg>
-
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(72,255,224,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(72,255,224,0.12)_1px,transparent_1px)] bg-size-[56px_56px] opacity-30" />
 
       <header className="relative z-10 mb-6 flex items-center justify-between gap-3">
         <div className="flex items-center gap-4">
@@ -70,11 +65,11 @@ export function HeroSection() {
             {audienceTabs.map((tab, index) => (
               <Badge
                 key={tab}
-                variant={index === 0 ? "default" : "secondary"}
+                variant={index === 0 ? 'default' : 'secondary'}
                 className={`rounded-full px-2.5 py-1 text-[0.7rem] font-bold ${
                   index === 0
-                    ? "bg-(--bg-primary) text-(--text-primary)"
-                    : "bg-(--color-secondaryt)/8 text-(--text-secondary)/75"
+                    ? 'bg-(--bg-primary) text-(--text-primary)'
+                    : 'bg-(--color-secondaryt)/8 text-(--text-secondary)/75'
                 }`}
               >
                 {tab}
@@ -85,7 +80,7 @@ export function HeroSection() {
 
         <div className="flex items-center gap-5">
           <nav className="hidden items-center gap-3 text-[0.7rem] text-(--text-secondary)/70 sm:flex">
-            {navLinks.map((link) => (
+            {navLinks.map(link => (
               <a key={link.href} href={link.href}>
                 {link.label}
               </a>
@@ -99,7 +94,7 @@ export function HeroSection() {
 
       <div className="relative z-10 flex flex-col justify-evenly px-6 pt-14 md:flex-row md:mt-0 mt-10">
         <div className="max-w-100 pt-1">
-          <h1 className="md:text-[4rem] max-w-[8ch] font-black leading-[0.9] tracking-[-0.08em] text-[4rem]">
+          <h1 className="md:text-[4rem] max-w-[8ch] font-black leading-[1.1] tracking-[-0.08em] text-[4rem]">
             Digitize your univers bank
           </h1>
         </div>
@@ -132,7 +127,7 @@ export function HeroSection() {
 
           <div className="mt-6 flex items-center gap-3 text-(--text-secondary)">
             <div className="flex -space-x-2">
-              {[0, 1, 2].map((avatar) => (
+              {[0, 1, 2].map(avatar => (
                 <Avatar
                   key={avatar}
                   className="h-7 w-7 border-2 border-[#050505]"
@@ -154,7 +149,7 @@ export function HeroSection() {
       </div>
 
       <div className="relative mx-auto my-8 flex h-48 w-full items-end justify-center sm:h-56">
-        <div className="card absolute left-[12%] top-[4%] w-[37%] rotate-50">
+        <div className="card absolute left-[12%] top-[4%] w-[37%] rotate-50 ">
           <Image
             src="/landing-assets/card-blue.png"
             alt="Blue Univers card"
@@ -188,7 +183,7 @@ export function HeroSection() {
         </div>
 
         <div className="absolute -bottom-35 left-1/2 z-40 -translate-x-1/2">
-          <div className="flex h-24 w-24 items-center justify-center rounded-full border-8 border-white bg-[#050505] shadow-lg">
+          <div className="flex h-24 w-24 items-center justify-center rounded-full  bg-[#050505] shadow-lg">
             <div className="relative flex h-16 w-16 items-center justify-center rounded-full border border-white/15 bg-(--bg-primary) overflow-hidden transition-transform hover:scale-105">
               <Image
                 src="/landing-assets/explore-more.png"
