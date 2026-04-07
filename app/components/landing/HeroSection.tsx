@@ -5,6 +5,9 @@ import { PlayIcon } from "lucide-react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,38 +15,48 @@ export function HeroSection() {
   const heroRef = useRef(null);
 
   useEffect(() => {
-  if (!heroRef.current) return;
+    if (!heroRef.current) return;
 
-  const ctx = gsap.context(() => {
-    gsap.fromTo(".card",
-      { y: 100, opacity: 0, scale: 0.8 },
-      {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 1,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: "top 80%",  
-          toggleActions: "play reverse play reverse"
-        }
-      }
-    );
-  }, heroRef);
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".card",
+        { y: 100, opacity: 0, scale: 0.8 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse",
+          },
+        },
+      );
+    }, heroRef);
 
-  return () => ctx.revert();
-}, []);
-
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section
       ref={heroRef}
       id="hero-section"
-      className="relative overflow-hidden rounded-[1.9rem] border border-white/8 bg-(--color-background) px-4 pb-5 pt-4 shadow-[0_24px_90px_rgba(0,0,0,0.4)] sm:px-5"
+      className="relative bg-(--color-background) px-4 pb-20 pt-4 shadow-[0_24px_90px_rgba(0,0,0,0.4)] sm:px-5 border-t-8 border-x-8   border-white"
+      style={{
+        clipPath: `url(#heroClip)`,
+      }}
     >
+      <svg width="0" height="0" style={{ position: "absolute" }}>
+        <defs>
+          <clipPath id="heroClip" clipPathUnits="objectBoundingBox">
+            <path d="M 0,0 L 1,0 L 1,1 L 0.56,1 Q 0.5,1.10 0.44,1 L 0,1 Z" />
+          </clipPath>
+        </defs>
+      </svg>
+
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(72,255,224,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(72,255,224,0.12)_1px,transparent_1px)] bg-size-[56px_56px] opacity-30" />
-    
 
       <header className="relative z-10 mb-6 flex items-center justify-between gap-3">
         <div className="flex items-center gap-4">
@@ -55,8 +68,9 @@ export function HeroSection() {
           </div>
           <div className="hidden items-center gap-2 sm:flex">
             {audienceTabs.map((tab, index) => (
-              <span
+              <Badge
                 key={tab}
+                variant={index === 0 ? "default" : "secondary"}
                 className={`rounded-full px-2.5 py-1 text-[0.7rem] font-bold ${
                   index === 0
                     ? "bg-(--bg-primary) text-(--text-primary)"
@@ -64,7 +78,7 @@ export function HeroSection() {
                 }`}
               >
                 {tab}
-              </span>
+              </Badge>
             ))}
           </div>
         </div>
@@ -83,44 +97,48 @@ export function HeroSection() {
         </div>
       </header>
 
-      <div className="relative z-10 flex md:flex-row flex-col md:mt-0 mt-10 justify-evenly px-6 pt-14">
-        <div className="max-w-56 pt-1">
-          <h1 className="text-[8rem] font-black leading-[0.8] tracking-[-0.08em] sm:text-[2.35rem]">
+      <div className="relative z-10 flex flex-col justify-evenly px-6 pt-14 md:flex-row md:mt-0 mt-10">
+        <div className="max-w-100 pt-1">
+          <h1 className="md:text-[4rem] max-w-[8ch] font-black leading-[0.9] tracking-[-0.08em] text-[4rem]">
             Digitize your univers bank
           </h1>
         </div>
 
-        <div className="max-w-50">
-          <p className="text-[1rem] leading-4 tracking-tight text-(--text-secondary)/60">
+        <div className="max-w-90">
+          <p className="md:text-[1.5rem] text-[2rem] mt-4 md:mt-0 md:leading-6 max-w-[50ch] leading-9 tracking-tight text-(--text-secondary)/60">
             Money should be easy, it is time to say goodbye to banks and
             financial services companies that do not work for you.
           </p>
 
           <div className="mt-4 flex items-center gap-3">
-            <a
-              href="#contact"
+            <Button
+              asChild
               className="rounded-full bg-(--bg-primary) px-4 py-2 text-[0.66rem] font-black text-(--text-primary) transition-transform duration-300 hover:scale-[1.02]"
             >
-              Digitize Now
-            </a>
-           
-            <button
+              <a href="#contact">Digitize Now</a>
+            </Button>
+
+            <Button
               type="button"
               aria-label="Play introduction video"
+              variant="outline"
+              size="icon"
               className="flex h-9 w-9 items-center justify-center rounded-full bg-(--color-secondary)/12 text-(--text-secondary) will-change-transform"
-              style={{ opacity: 8 }}
+              style={{ opacity: 0.8 }}
             >
               <PlayIcon className="w-4 h-4" />
-            </button>
+            </Button>
           </div>
 
           <div className="mt-6 flex items-center gap-3 text-(--text-secondary)">
             <div className="flex -space-x-2">
               {[0, 1, 2].map((avatar) => (
-                <span
+                <Avatar
                   key={avatar}
-                  className="h-7 w-7 rounded-full border-2 border-[#050505] bg-linear-to-br from-[#5f5d5d] to-[#767676]"
-                />
+                  className="h-7 w-7 border-2 border-[#050505]"
+                >
+                  <AvatarFallback className="bg-linear-to-br from-[#5f5d5d] to-[#767676]" />
+                </Avatar>
               ))}
             </div>
             <div>
@@ -137,54 +155,50 @@ export function HeroSection() {
 
       <div className="relative mx-auto my-8 flex h-48 w-full items-end justify-center sm:h-56">
         <div className="card absolute left-[12%] top-[4%] w-[37%] rotate-50">
-          <div className="rounded-[1.35rem]">
-            <Image
-              src="/landing-assets/card-blue.png"
-              alt="Blue Univers card"
-              width={693}
-              height={540}
-              className="h-auto w-full rounded-[1.15rem]"
-              priority
-            />
-          </div>
+          <Image
+            src="/landing-assets/card-blue.png"
+            alt="Blue Univers card"
+            width={693}
+            height={540}
+            className="h-auto w-full rounded-[1.15rem]"
+            priority
+          />
         </div>
 
-        <div className="card absolute left-1/2 top-[5%] z-20 w-[44%] md:-rotate-50 -translate-x-1/2">
-          <div className="rounded-[1.45rem] ">
-            <Image
-              src="/landing-assets/card-orange.png"
-              alt="Orange Univers card"
-              width={828}
-              height={755}
-              className="h-auto w-full rounded-[1.2rem]"
-              priority
-            />
-          </div>
+        <div className="card z-20 absolute left-1/2 top-[5%] w-[44%] -translate-x-1/2 md:-rotate-50">
+          <Image
+            src="/landing-assets/card-orange.png"
+            alt="Orange Univers card"
+            width={828}
+            height={755}
+            className="h-auto w-full rounded-[1.2rem]"
+            priority
+          />
         </div>
 
-        <div className="card absolute right-[12%] top-[10%] z-10 w-[37%] rotate-3">
-          <div className="rounded-[1.35rem] ">
-            <Image
-              src="/landing-assets/card-green.png"
-              alt="Green Univers card"
-              width={884}
-              height={760}
-              className="h-auto w-full rounded-[1.15rem]"
-              priority
-            />
-          </div>
+        <div className="card z-10 absolute right-[12%] top-[10%] w-[37%] rotate-3">
+          <Image
+            src="/landing-assets/card-green.png"
+            alt="Green Univers card"
+            width={884}
+            height={760}
+            className="h-auto w-full rounded-[1.15rem]"
+            priority
+          />
         </div>
 
-        <div className="card absolute -bottom-10 left-1/2 z-30 flex h-20 w-20 -translate-x-1/2 items-center justify-center rounded-full border-[6px] border-[#050505] bg-(--color-background) shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-(--bg-primary) text-sm text-(--text-primary)">
-            <Image
-              src="/landing-assets/explore-more.png"
-              alt="Explore More"
-              width={1500}
-              height={1500}
-              className="h-auto w-full rounded-[1.15rem]"
-              priority
-            />
+        <div className="absolute -bottom-35 left-1/2 z-40 -translate-x-1/2">
+          <div className="flex h-24 w-24 items-center justify-center rounded-full border-8 border-white bg-[#050505] shadow-lg">
+            <div className="relative flex h-16 w-16 items-center justify-center rounded-full border border-white/15 bg-(--bg-primary) overflow-hidden transition-transform hover:scale-105">
+              <Image
+                src="/landing-assets/explore-more.png"
+                alt="Explore More"
+                width={1500}
+                height={1500}
+                className="h-auto w-full"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>
