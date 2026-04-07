@@ -96,10 +96,10 @@ export function FeaturesSection() {
           {featureCard.map((card, index) => (
             <Card
               key={index}
-              className="group flex flex-col min-h-26 rounded-[1.15rem] gap-3 
-                 bg-(--bg-secondary) p-3 cursor-pointer 
-                 transform transition-transform duration-1000 ease-out 
-                 hover:bg-black hover:text-white"
+              className="group flex w-60 h-60 flex-col min-h-26 rounded-xl gap-3 
+                  bg-(--bg-secondary) p-3 cursor-pointer 
+                  transform transition-transform duration-1000 ease-out 
+                  hover:bg-black hover:text-white"
             >
               <CardHeader className="p-0">
                 <CardTitle className="text-[0.9rem] font-black transition-colors duration-500 group-hover:text-white">
@@ -108,7 +108,7 @@ export function FeaturesSection() {
               </CardHeader>
               <CardContent className="p-0 text-[0.9rem] transition-colors duration-500 group-hover:text-white">
                 {card.content}
-                <div className="flex items-center gap-1 text-xs mt-2">
+                <div className="flex  items-center gap-1 text-xs mt-15">
                   <span>{card.button}</span>
                   <ArrowRight size={14} />
                 </div>
@@ -144,7 +144,7 @@ export function FeaturesSection() {
 
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-(--color-background) text-(--text-secondary) 
-                      transform translate-y-full group-hover:translate-y-0 transition-transform duration-1000 ease-out"
+                        transform translate-y-full group-hover:translate-y-0 transition-transform duration-1000 ease-out"
               >
                 <div className="text-[2rem] font-black">{stat.value}</div>
                 <p className="text-sm">{stat.label}</p>
