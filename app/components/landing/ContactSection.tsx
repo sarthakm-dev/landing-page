@@ -1,4 +1,5 @@
 import { ContactFooter } from "./ContactFooter";
+import { Button } from "@/components/ui/button";
 
 export function ContactSection() {
   return (
@@ -9,8 +10,8 @@ export function ContactSection() {
           Make your business spending smarter
         </h2>
         <div className="flex justify-center gap-5">
-          <button className="rounded-md bg-(--bg-primary) px-4 py-2 text-[0.9rem] font-medium text-(--text-primary)">Try Revolut business now</button>
-          <button className="rounded-md border-2  px-4 py-2 text-[0.9rem] font-black text-(--text-primary)">Contact Sales</button>
+          <Button className="rounded-md bg-(--bg-primary) px-4 py-2 text-[0.9rem] font-medium text-(--text-primary)">Try Revolut business now</Button>
+          <Button variant="outline" className="rounded-md border-2  px-4 py-2 text-[0.9rem] font-black text-(--text-primary)">Contact Sales</Button>
         </div>
 
         <ContactFooter/>
