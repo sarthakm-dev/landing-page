@@ -5,6 +5,7 @@ import { hover } from "@/app/data/landing-content";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 gsap.registerPlugin(ScrollTrigger);
 export default function BusinessSection() {
   const sectionRef = useRef(null);
@@ -65,98 +66,105 @@ export default function BusinessSection() {
 
       <div className="grid md:grid-cols-2 gap-6">
         
-        <div className="card-left bg-(--bg-primary) text-(--text-primary) rounded-3xl p-6 flex flex-col justify-between min-h-80">
-          <div>
-            <h3 className="text-xl font-bold">
+        <Card className="card-left bg-(--bg-primary) text-(--text-primary) rounded-3xl p-6 flex flex-col justify-between min-h-80">
+          <CardHeader className="p-0">
+            <CardTitle className="text-xl font-bold">
               Send and receive without borders
-            </h3>
+            </CardTitle>
             <p className="mt-2 text-sm opacity-70">Explore Payments</p>
-          </div>
-          <div className="flex justify-center mt-6">
+          </CardHeader>
+          <CardContent className="p-0 flex justify-center mt-6">
             <Image
               src="/landing-assets/payment.png"
               alt="payment"
               width={200}
               height={200}
-              className="rounded-xl"
+              className="rounded-xl h-auto w-auto"
             />
-          </div>
-        </div>
+          </CardContent>
+        </Card>
 
         
-        <div className="card-right bg-(--color-background) rounded-3xl p-6 flex flex-col justify-between min-h-80">
-          <div>
-            <h3 className="text-xl font-semibold">
+        <Card className="card-right bg-(--color-background) rounded-3xl p-6 flex flex-col justify-between min-h-80">
+          <CardHeader className="p-0">
+            <CardTitle className="text-xl font-semibold">
               Invoices that work smarter
-            </h3>
+            </CardTitle>
             <p className="mt-2 text-sm text-green-400">
               Learn more about Invoices
             </p>
-          </div>
-          <div className="flex justify-center mt-6">
+          </CardHeader>
+          <CardContent className="p-0 flex justify-center mt-6">
             <Image
               src="/landing-assets/invoice.png"
               alt="invoice"
               width={220}
               height={200}
+              className="rounded-xl h-auto w-auto"
             />
-          </div>
-        </div>
+          </CardContent>
+        </Card>
 
 
-        <div className="card-left bg-(--color-background) rounded-3xl p-6 flex flex-col justify-between min-h-80">
-          <div>
-            <h3 className="text-xl font-semibold">
+        <Card className="card-left bg-(--color-background) rounded-3xl p-6 flex flex-col justify-between min-h-80">
+          <CardHeader className="p-0">
+            <CardTitle className="text-xl font-semibold">
               Smart company debit cards help you and your team go further
-            </h3>
+            </CardTitle>
             <p className="mt-2 text-sm text-(--color-primary)">
               Learn more about Cards
             </p>
-          </div>
-          <div className="flex justify-center mt-6">
+          </CardHeader>
+          <CardContent className="p-0 flex justify-center mt-6">
             <Image
               src="/landing-assets/cards.png"
               alt="cards"
               width={260}
               height={200}
+              className="rounded-xl h-auto w-auto"
             />
-          </div>
-        </div>
+          </CardContent>
+        </Card>
 
         
-        <div className="card-right bg-(--color-background) rounded-3xl p-6 flex flex-col justify-between min-h-80">
-          <div>
-            <h3 className="text-xl font-semibold">
+        <Card className="card-right bg-(--color-background) rounded-3xl p-6 flex flex-col justify-between min-h-80">
+          <CardHeader className="p-0">
+            <CardTitle className="text-xl font-semibold">
               Exchange, send and spend at great rates
-            </h3>
-          </div>
-          <p className="text-(--color-neutral) mt-4 text-sm inline-flex items-center gap-1">
-            Explore Exchanges <ArrowRight />
-          </p>
-        </div>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-0">
+            <p className="text-(--color-neutral) mt-4 text-sm inline-flex items-center gap-1">
+              Explore Exchanges <ArrowRight />
+            </p>
+          </CardContent>
+        </Card>
 
 
-        <div className="card-full md:col-span-2 bg-(--color-background) rounded-3xl p-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div>
-            <h3 className="text-2xl font-semibold">
+        <Card className="card-full md:col-span-2 bg-(--color-background) rounded-3xl p-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <CardHeader className="p-0">
+            <CardTitle className="text-2xl font-semibold">
               Set and change team permissions with a tap
-            </h3>
-            <p className="text-gray-400 mt-4 max-w-md text-sm">
+            </CardTitle>
+            <CardContent className="p-0 text-gray-400 mt-4 max-w-md text-sm">
               Stay in total control of your teams spending by managing their
               permissions and levels of access. Create custom roles and choose
               the combination of apps and features you want them to use
-            </p>
+            </CardContent>
             <p className="text-(--color-neutral) mt-4 text-sm inline-flex items-center gap-1">
               Discover Revolut Business <ArrowRight />
             </p>
-          </div>
-          <Image
-            src="/landing-assets/transfers.png"
-            alt="permissions"
-            width={260}
-            height={220}
-          />
-        </div>
+          </CardHeader>
+          <CardContent className="p-0">
+            <Image
+              src="/landing-assets/transfers.png"
+              alt="permissions"
+              width={260}
+              height={220}
+              className="h-auto w-auto"
+            />
+          </CardContent>
+        </Card>
       </div>
 
       <div className="mt-24 text-center">
