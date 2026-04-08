@@ -12,8 +12,8 @@ export function ContactSection() {
         <h2 className="mx-auto max-w-[15ch] text-[2.65rem] font-black leading-[0.96] tracking-[-0.06em]">
           Make your business spending smarter
         </h2>
-        <div className="flex justify-center gap-5">
-          <Button className="rounded-md cursor-pointer   bg-(--bg-primary) px-4 py-2 text-[0.9rem] font-medium text-(--text-primary)">
+        <div className="flex justify-center md:gap-5 gap-2">
+          <Button className="rounded-md cursor-pointer   bg-(--bg-primary) px-2 py-2 text-[0.9rem] font-medium text-(--text-primary)">
             Try Revolut business now
           </Button>
           <Button
